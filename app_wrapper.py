@@ -1,13 +1,13 @@
 from flask import Flask
 
 # Usage:
-# wrapper = FlaskWrapper()
+# wrapper = FlaskAppWrapper()
 # wrapper.add_routes(module, {
 #     '/route': 'method',
 #     '/another': 'another_method'
 # })
 # wrapper.app.run()
-class FlaskWrapper:
+class FlaskAppWrapper:
     def __init__(self, app=None):
         if app:
             self.app = app
