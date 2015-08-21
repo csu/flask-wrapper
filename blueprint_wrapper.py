@@ -12,9 +12,11 @@ class FlaskBlueprintWrapper:
         if type(blueprint) is Blueprint:
             self.blueprint = blueprint
         elif isinstance(blueprint, basestring):
-            self.blueprint = Blueprint(blueprint, __name__, *args, **kwargs)
+            self.blueprint = Blueprint(blueprint,
+                __name__, *args, **kwargs)
         else:
-            self.blueprint = Blueprint('wrapped_blueprint', __name__, *args, **kwargs)
+            self.blueprint = Blueprint('wrapped_blueprint',
+                __name__, *args, **kwargs)
 
     def add_routes(self, module, route_map):
         for r, m in route_map.iteritems():
