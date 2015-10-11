@@ -18,3 +18,6 @@ class FlaskAppWrapper:
         for r, m in route_map.iteritems():
             method = getattr(module, m)
             self.app.add_url_rule(r, method.__name__, method)
+
+    def run(self):
+        self.app.run()
